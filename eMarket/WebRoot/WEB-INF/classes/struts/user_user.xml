@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+    <package name="tbl_user" namespace="/user" extends="struts-default">
+		
+		<action name="adduser" method="adduser" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+
+		<action name="adduserprocess" method="adduserprocess" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+
+		<action name="viewuser" method="viewuser" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/view.jsp</result>
+		</action>
+
+		<action name="viewuserprocess" method="viewuserprocess" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+
+		<action name="edituser" method="edituser" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/edit.jsp</result>
+		</action>
+
+		<action name="edituserprocess" method="edituserprocess" class="com.mz2b.os.action.UserAction">
+			<result type="redirect">/user/searchuser.action</result>
+		</action>
+		
+		<action name="searchuser" method="searchuser" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/list.jsp</result>
+		</action>	
+			
+		<action name="portalviewuser" method="portalviewuser" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+		
+		<action name="portalviewuserprocess" method="portalviewuserprocess" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+		
+		<action name="portaledituser" method="portaledituser" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+		
+		<action name="portaledituserprocess" method="portaledituserprocess" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+		
+		<action name="deleteuser" method="deleteuser" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/manage/user/add.jsp</result>
+		</action>								
+    </package>
+
+</struts>
