@@ -1,5 +1,6 @@
 package com.mz2b.os.vo;
 
+import java.sql.Timestamp;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -9,12 +10,14 @@ import com.mz2b.base.BaseBean;
 @Entity
 @Table(name="tbl_order")
 public class OrderVO extends BaseBean {
-	private int id;
+//	private int id;
 	private int uid;
 	private int oid;
 	private String uname;
 	private float total;
 	private int amount;
+	private String orderStatus;
+	private Timestamp date;
 	
 	@Id
 	@GeneratedValue
@@ -53,6 +56,18 @@ public class OrderVO extends BaseBean {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
 	}
 	
 }

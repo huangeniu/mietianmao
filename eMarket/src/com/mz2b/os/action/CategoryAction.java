@@ -6,7 +6,7 @@ import com.mz2b.os.vo.CategoryVO;
 
 public class CategoryAction extends BaseAction {
 	private ICategoryService categoryService;
-	private CategoryVO category;
+	private CategoryVO category = new CategoryVO();
 	
 	public String addcategory(){
 		return SUCCESS;

@@ -34,7 +34,7 @@
 
 
 				<form name="dataForm" method="post"
-					action="<%=request.getContextPath()%>/bulletin/bulletininfo/addbulletininfoprocess.do"
+					action="<%=request.getContextPath()%>/order/addorder.action"
 					enctype="multipart/form-data">
 
 
@@ -44,111 +44,40 @@
 
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										标题：*
-										<%-- <label class="mandatory">*</label> --%>
+										订单号：*
 									</td>
 									<td>
-
-
-
-										<input type="text" name="bulletininfo.title" id="title"
+										<input type="text" name="order.oid" id="oid"
 											class="input_style1" size="100" maxlength="132" />
-
-
 									</td>
 								</tr>
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										概要
-										<label class="mandatory">
-											[
-											<bean:message key="label.input.maxlength" />
-											1000]
-										</label>
-										：&nbsp;
+										订单总数：
 									</td>
 									<td>
-
-
-
-										<input type="text" name="bulletininfo.summarization"
-											id="summarization" class="input_style1" size="100"
-											maxlength="1000" />
-
-
+										<input type="text" name="order.amount" id="amount"
+											class="input_style1" size="100" maxlength="132" />
 									</td>
 								</tr>
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										内容正文
-										<label class="mandatory">
-											[
-											<bean:message key="label.input.maxlength" />
-											65535]
-										</label>
-										：*
+										订单总：
 									</td>
 									<td>
-										<textarea name="bulletininfo.contentStr" id="contentStr"
-											cols="100" rows="20" class="ckeditor"></textarea>
-
-
-
+										<input type="text" name="order.total" id="total"
+											class="input_style1" size="100" maxlength="132" />
 									</td>
 								</tr>
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										附件：&nbsp;
+										用户名：
 									</td>
 									<td>
-
-
-
-										<input type="file" name="uploadfile.file" id="uploadfile"
-											class="input_style1" size=28 onchange="checkfile()" />
-
-
+										<input type="text" name="order.uname" id="uname"
+											class="input_style1" size="100" maxlength="132" />
 									</td>
-								</tr>
-								<tr>
-									<td align="right" width="30%" style="background: #f0f6fe">
-										图片：&nbsp;
-									</td>
-									<td>
-
-
-
-										<input type="file" name="uploadimage.file"
-											class="input_style1" size=28 id="uploadimage"
-											onchange="checkimage()" />
-
-
-									</td>
-								</tr>
-								<tr>
-									<td align="right" width="30%" style="background: #f0f6fe">
-										状态：&nbsp;
-									</td>
-									<td>
-
-
-
-
-										<select name="bulletininfo.btstatusCode" id="btstatusCode">
-											<option value="toPublishe">
-												未发布
-											</option>
-											<option value="published">
-												发布
-											</option>
-										</select>
-
-
-									</td>
-								</tr>
-
-
-
+								</tr>								
 							</table>
 						</div>
 						<center>
@@ -157,29 +86,5 @@
 						</center>
 				</form>
 		</center>
-		<script>
-	function checkfile() {
-		var x = document.getElementById("uploadfile").value;
-		var s = x.lastIndexOf(".");
-		var h = x.substring(s + 1);
-		if (h != "txt" && h != "ppt" && h != "doc" && h != "docx" && h != "pdf"
-				&& h != "xls" && h != "xlsx") {
-			alert("附件格式必须是：txt，ppt，doc，docx，pdf，xls，xlsx！");
-			var obj = document.getElementById("uploadfile");
-			obj.outerHTML = obj.outerHTML.replace(/(value=\").+\"/i, "$1\"");
-		}
-	}
-
-	function checkimage() {
-		var im = document.getElementById("uploadimage").value;
-		var imanum = im.lastIndexOf(".");
-		var imag = im.substring(imanum + 1);
-		if (imag != "jpg" && imag != "gif" && imag != "png" && imag != "bmp") {
-			alert("图片的格式必须是：jpg，gif，png，bmp！");
-			var obj = document.getElementById("uploadimage");
-			obj.outerHTML = obj.outerHTML.replace(/(value=\").+\"/i, "$1\"");
-		}
-	}
-</script>
 	</body>
 </html>

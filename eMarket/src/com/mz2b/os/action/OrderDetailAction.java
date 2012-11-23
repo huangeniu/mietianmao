@@ -6,7 +6,7 @@ import com.mz2b.os.vo.OrderDetailVO;
 
 public class OrderDetailAction extends BaseAction {
 	private IOrderDetailService orderDetailService;
-	private OrderDetailVO orderDetail;
+	private OrderDetailVO orderDetail = new OrderDetailVO();
 	
 	public String addorderdetail(){
 		return SUCCESS;

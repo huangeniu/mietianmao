@@ -1,7 +1,6 @@
 <%@ page language="java" pageEncoding="GBK"%>
 <%@ page import="java.util.*,com.mz2b.os.vo.*"%>
 <%
-	UserVO user = (UserVO) request.getAttribute("user");
 %>
 <%
 	String path = request.getContextPath();
@@ -44,8 +43,8 @@
 										标题：*
 									</td>
 									<td>
-										<input type="text" name="bulletininfo.title" id="title"
-											value="<%=user.getUname()%>" class="input_style1" size="100"
+										<input type="text" name="goods.gname" id="gname"
+											value="${goods.gname }" class="input_style1" size="100"
 											maxlength="132" />
 									</td>
 								</tr>
@@ -60,34 +59,40 @@
 										：&nbsp;
 									</td>
 									<td>
-										<input type="text" name="bulletininfo.summarization"
-											id="summarization" value="<%=user.getUname()%>"
+										<input type="text" name="goods.summary"
+											id="summary" value="${goods.summary }"
 											class="input_style1" size="100" maxlength="1000" />
 
 									</td>
 								</tr>
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										内容正文
-										<label class="mandatory">
-											[
-											<bean:message key="label.input.maxlength" />
-											65535]
-										</label>
-										：*
+										出售价：*
 									</td>
 									<td>
-										<textarea name="bulletininfo.contentStr" id="contentStr"
-											cols="100" rows="20" class="ckeditor"><%=user.getPassword()%></textarea>
+										<input type="text" name="goods.sprice" id="sprice"
+											value="${goods.sprice }" class="input_style1" size="100"
+											maxlength="132" />
 									</td>
 								</tr>
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										附件：&nbsp;
+										入货价：*
 									</td>
 									<td>
-										<input type="file" name="uploadfile.file" id="uploadfile"
-											class="input_style1" size=28 onchange="checkfile()" />
+										<input type="text" name="goods.dprice" id="dprice"
+											value="${goods.dprice }" class="input_style1" size="100"
+											maxlength="132" />
+									</td>
+								</tr>	
+								<tr>
+									<td align="right" width="30%" style="background: #f0f6fe">
+										库存：*
+									</td>
+									<td>
+										<input type="text" name="goods.stock" id="stock"
+											value="${goods.stock }" class="input_style1" size="100"
+											maxlength="132" />
 									</td>
 								</tr>
 								<tr>
@@ -96,26 +101,9 @@
 									</td>
 									<td>
 
-										<input type="file" name="uploadimage.file" id="uploadimage"
+										<input type="file" name="upload.file" id="uploadimage"
 											class="input_style1" size=28 onchange="checkimage()" />
 
-									</td>
-								</tr>
-
-								<tr>
-									<td align="right" width="30%" style="background: #f0f6fe">
-										状态：&nbsp;
-									</td>
-									<td>
-
-										<select id="btstatusCode" name="bulletininfo.btstatusCode">
-											<option value="published">
-												发布
-											</option>
-											<option value="toPublishe">
-												未发布
-											</option>
-										</select>
 									</td>
 								</tr>
 							</table>

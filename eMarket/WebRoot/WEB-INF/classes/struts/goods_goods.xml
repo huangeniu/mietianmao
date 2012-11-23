@@ -12,23 +12,23 @@
 		</action>
 
 		<action name="addgoodsprocess" method="addgoodsprocess" class="com.mz2b.os.action.GoodsAction">
-			<result>/jsp/manage/goods/add.jsp</result>
+			<result type="redirect">/goods/searchgoods.action</result>
 		</action>
 
 		<action name="viewgoods" method="viewgoods" class="com.mz2b.os.action.GoodsAction">
-			<result>/jsp/manage/goods/add.jsp</result>
+			<result>/jsp/manage/goods/view.jsp</result>
 		</action>
 
 		<action name="editgoods" method="editgoods" class="com.mz2b.os.action.GoodsAction">
-			<result>/jsp/manage/goods/add.jsp</result>
+			<result>/jsp/manage/goods/edit.jsp</result>
 		</action>
 
 		<action name="editgoodsprocess" method="editgoodsprocess" class="com.mz2b.os.action.GoodsAction">
-			<result>/jsp/manage/goods/add.jsp</result>
+			<result type="redirect">/goods/searchgoods.action</result>
 		</action>
 		
 		<action name="searchgoods" method="searchgoods" class="com.mz2b.os.action.GoodsAction">
-			<result>/jsp/manage/goods/add.jsp</result>
+			<result>/jsp/manage/goods/list.jsp</result>
 		</action>	
 			
 		<action name="portalviewgoods" method="portalviewgoods" class="com.mz2b.os.action.GoodsAction">

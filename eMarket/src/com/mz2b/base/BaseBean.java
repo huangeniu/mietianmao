@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import java.sql.Timestamp;
 
 public class BaseBean {
-	private int id;
+	protected int id;
 	private Timestamp date;
 	
 	public int getId() {

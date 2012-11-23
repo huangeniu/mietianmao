@@ -8,10 +8,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	<base href="<%=basePath%>">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="style/default/cms_common.css">
-	<link rel="stylesheet" type="text/css" href="style/default/cms_sytle.css">
+		<base href="<%=basePath%>">
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<title>main</title>
+			<link rel="stylesheet" type="text/css"
+				href="style/default/cms_common.css">
+			<link rel="stylesheet" id="skinCss" type="text/css"
+					href="style/default/cms_sytle.css">
+	<SCRIPT language=JavaScript
+		src="<%=request.getContextPath()%>/plug-in/ErrorCheck.js"></SCRIPT>
+	<script
+		src="<%=request.getContextPath()%>/js/manage/bulletin/bulletininfo.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/plug-in/ckeditor/ckeditor.js"></script>
+	<script src="<%=request.getContextPath()%>/plug-in/jquery/jquery.js"></script>
 
 	<body>
 		<center>

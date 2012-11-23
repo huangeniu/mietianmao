@@ -12,27 +12,27 @@
 		</action>
 
 		<action name="addorderdetailprocess" method="addorderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
-			<result>/jsp/manage/orderdetail/add.jsp</result>
+			<result type="redirect">/orderdetail/searchorderdetail.action</result>
 		</action>
 
 		<action name="vieworderdetail" method="vieworderdetail" class="com.mz2b.os.action.OrderDetailAction">
-			<result>/jsp/manage/orderdetail/add.jsp</result>
+			<result>/jsp/manage/orderdetail/view.jsp</result>
 		</action>
 
 		<action name="vieworderdetailprocess" method="vieworderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
-			<result>/jsp/manage/orderdetail/add.jsp</result>
+			<result type="redirect">/orderdetail/searchorderdetail.action</result>
 		</action>
 
 		<action name="editorderdetail" method="editorderdetail" class="com.mz2b.os.action.OrderDetailAction">
-			<result>/jsp/manage/orderdetail/add.jsp</result>
+			<result>/jsp/manage/orderdetail/edit.jsp</result>
 		</action>
 
 		<action name="editorderdetailprocess" method="editorderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
-			<result>/jsp/manage/orderdetail/add.jsp</result>
+			<result type="redirect">/orderdetail/searchorderdetail.action</result>
 		</action>
 		
 		<action name="searchorderdetail" method="searchorderdetail" class="com.mz2b.os.action.OrderDetailAction">
-			<result>/jsp/manage/orderdetail/add.jsp</result>
+			<result>/jsp/manage/orderdetail/list.jsp</result>
 		</action>	
 			
 		<action name="portalvieworderdetail" method="portalvieworderdetail" class="com.mz2b.os.action.OrderDetailAction">

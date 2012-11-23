@@ -1,7 +1,6 @@
 <%@ page language="java" pageEncoding="GBK"%>
 <%@ page import="java.util.*,com.mz2b.os.vo.*"%>
 <%
-	UserVO user = (UserVO) request.getAttribute("user");
 %>
 
 <%
@@ -35,7 +34,7 @@
 			</div>
 			<div class="table_bg2">
 				<form name="dataForm" method="post"
-					action="<%=request.getContextPath()%>/bulletin/bulletininfo/vieweditbulletininfoprocess.do"
+					action="<%=request.getContextPath()%>/category/editcategoryprocess.action"
 					enctype="multipart/form-data">
 					<div align="center">
 						<div class="table_bg">
@@ -45,78 +44,30 @@
 										标题：*
 									</td>
 									<td>
-										<input type="text" name="bulletininfo.title" id="title"
-											value="<%=user.getUname()%>" class="input_style1" size="100"
+										<input type="text" name="category.cname" id="cname"
+											value="${category.cname }" class="input_style1" size="100"
 											maxlength="132" />
 									</td>
 								</tr>
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										概要
-										<label class="mandatory">
-											[
-											<bean:message key="label.input.maxlength" />
-											1000]
-										</label>
-										：&nbsp;
+										显示级别:
 									</td>
 									<td>
-										<input type="text" name="bulletininfo.summarization"
-											id="summarization" value="<%=user.getUname()%>"
+										<input type="text" name="category.displayLevel"
+											id="displayLevel" value="${category.displayLevel }"
 											class="input_style1" size="100" maxlength="1000" />
 
 									</td>
 								</tr>
 								<tr>
 									<td align="right" width="30%" style="background: #f0f6fe">
-										内容正文
-										<label class="mandatory">
-											[
-											<bean:message key="label.input.maxlength" />
-											65535]
-										</label>
-										：*
+										内容正文:
 									</td>
 									<td>
-										<textarea name="bulletininfo.contentStr" id="contentStr"
-											cols="100" rows="20" class="ckeditor"><%=user.getPassword()%></textarea>
-									</td>
-								</tr>
-								<tr>
-									<td align="right" width="30%" style="background: #f0f6fe">
-										附件：&nbsp;
-									</td>
-									<td>
-										<input type="file" name="uploadfile.file" id="uploadfile"
-											class="input_style1" size=28 onchange="checkfile()" />
-									</td>
-								</tr>
-								<tr>
-									<td align="right" width="30%" style="background: #f0f6fe">
-										图片：&nbsp;
-									</td>
-									<td>
-
-										<input type="file" name="uploadimage.file" id="uploadimage"
-											class="input_style1" size=28 onchange="checkimage()" />
-
-									</td>
-								</tr>
-
-								<tr>
-									<td align="right" width="30%" style="background: #f0f6fe">
-										状态：&nbsp;
-									</td>
-									<td>
-
-										<select id="btstatusCode" name="bulletininfo.btstatusCode">
-											<option value="published">
-												发布
-											</option>
-											<option value="toPublishe">
-												未发布
-											</option>
-										</select>
+										<input type="text" name="category.parentName" id="parentName"
+												value="${category.parentName }" class="input_style1" size="100"
+												maxlength="132" />
 									</td>
 								</tr>
 							</table>
@@ -127,31 +78,4 @@
 				</form>
 		</center>
 	</body>
-	<script>
-	//function submitData() {
-	//	document.dataForm.submit();
-	//}
-
-	function checkfile() {
-		var x = document.getElementById("uploadfile").value;
-		var s = x.lastIndexOf(".");
-		var h = x.substring(s + 1);
-		if (h != "txt" && h != "ppt" && h != "doc" && h != "docx" && h != "pdf"
-				&& h != "xls" && h != "xlsx") {
-			alert("附件格式必须是：txt，ppt，doc，docx，pdf，xls，xlsx！");
-			var obj = document.getElementById("uploadfile");
-			obj.outerHTML = obj.outerHTML.replace(/(value=\").+\"/i, "$1\"");
-		}
-	}
-
-	function checkimage() {
-		var im = document.getElementById("uploadimage").value;
-		var imanum = im.lastIndexOf(".");
-		var imag = im.substring(imanum + 1);
-		if (imag != "jpg" && imag != "gif" && imag != "png" && imag != "bmp") {
-			alert("图片的格式必须是：jpg，gif，png，bmp！");
-			var obj = document.getElementById("uploadimage");
-			obj.outerHTML = obj.outerHTML.replace(/(value=\").+\"/i, "$1\"");
-		}
-	}
-</script>
+</head>

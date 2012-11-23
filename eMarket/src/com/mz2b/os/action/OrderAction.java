@@ -6,7 +6,7 @@ import com.mz2b.os.vo.OrderVO;
 
 public class OrderAction extends BaseAction {
 	private IOrderService orderService;
-	private OrderVO order;
+	private OrderVO order = new OrderVO();
 	
 	public String addorder(){
 		return SUCCESS;

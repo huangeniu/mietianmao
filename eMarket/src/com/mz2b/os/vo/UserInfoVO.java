@@ -1,6 +1,7 @@
 package com.mz2b.os.vo;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ import com.mz2b.base.BaseBean;
 @Entity
 @Table(name="tbl_user_info")
 public class UserInfoVO extends BaseBean implements Serializable {
-	private int id;
+//	private int id;
 	private String name;
 	private int age;
 	private String summary;
@@ -24,6 +25,7 @@ public class UserInfoVO extends BaseBean implements Serializable {
 	private String code;
 	private String phone;
 	private String qq;
+	private Timestamp date;
 	
 	@Id
 	@GeneratedValue
@@ -81,6 +83,12 @@ public class UserInfoVO extends BaseBean implements Serializable {
 	}
 	public void setQq(String qq) {
 		this.qq = qq;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
 	}
 	
 }

@@ -1,5 +1,7 @@
 package com.mz2b.os.vo;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,11 +12,12 @@ import com.mz2b.base.BaseBean;
 @Entity
 @Table(name="tbl_category")
 public class CategoryVO extends BaseBean {
-	private int id;
+//	private int id;
 	private String cname;
 	private String parentId;
 	private String ParentName;
 	private String displayLevel;
+	private Timestamp date;
 	
 	@Id
 	@GeneratedValue
@@ -47,6 +50,12 @@ public class CategoryVO extends BaseBean {
 	}
 	public void setDisplayLevel(String displayLevel) {
 		this.displayLevel = displayLevel;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
 	}
 
 }

@@ -12,27 +12,27 @@
 		</action>
 
 		<action name="addorderprocess" method="addorderprocess" class="com.mz2b.os.action.OrderAction">
-			<result>/jsp/manage/order/add.jsp</result>
+			<result type="redirect">/order/searchorder.action</result>
 		</action>
 
 		<action name="vieworder" method="vieworder" class="com.mz2b.os.action.OrderAction">
-			<result>/jsp/manage/order/add.jsp</result>
+			<result>/jsp/manage/order/view.jsp</result>
 		</action>
 
 		<action name="vieworderprocess" method="vieworderprocess" class="com.mz2b.os.action.OrderAction">
-			<result>/jsp/manage/order/add.jsp</result>
+			<result type="redirect">/order/searchorder.action</result>
 		</action>
 
 		<action name="editorder" method="editorder" class="com.mz2b.os.action.OrderAction">
-			<result>/jsp/manage/order/add.jsp</result>
+			<result>/jsp/manage/order/edit.jsp</result>
 		</action>
 
 		<action name="editorderprocess" method="editorderprocess" class="com.mz2b.os.action.OrderAction">
-			<result>/jsp/manage/order/add.jsp</result>
+			<result type="redirect">/order/searchorder.action</result>
 		</action>
 		
 		<action name="searchorder" method="searchorder" class="com.mz2b.os.action.OrderAction">
-			<result>/jsp/manage/order/add.jsp</result>
+			<result>/jsp/manage/order/list.jsp</result>
 		</action>	
 			
 		<action name="portalvieworder" method="portalvieworder" class="com.mz2b.os.action.OrderAction">

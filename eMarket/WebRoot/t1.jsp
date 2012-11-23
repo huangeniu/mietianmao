@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=GB18030"
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=GB18030"
     pageEncoding="GB18030"%>
+    
+    <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -57,6 +59,21 @@
 </script>
 	</head>
 	<body>
+	
+	<% 
+		List list = new ArrayList();
+		for(int i=0;i<10;i++){
+			list.add(i * 10);
+		}
+		request.setAttribute("resultList",list);
+	%>
+	
+	<s:debug></s:debug>
+	
+	<s:iterator value="#attr.resultList" >
+		asdf<s:property/> 
+	</s:iterator>
+	
 		<p>
 			Your Message:
 			<input id="sd" />

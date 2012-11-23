@@ -12,23 +12,23 @@
 		</action>
 
 		<action name="addcategoryprocess" method="addcategoryprocess" class="com.mz2b.os.action.CategoryAction">
-			<result>/jsp/manage/category/add.jsp</result>
+			<result type="redirect">/category/searchcategory.action</result>
 		</action>
 
 		<action name="viewcategory" method="viewcategory" class="com.mz2b.os.action.CategoryAction">
-			<result>/jsp/manage/category/add.jsp</result>
+			<result>/jsp/manage/category/view.jsp</result>
 		</action>
 
 		<action name="editcategory" method="editcategory" class="com.mz2b.os.action.CategoryAction">
-			<result>/jsp/manage/category/add.jsp</result>
+			<result>/jsp/manage/category/edit.jsp</result>
 		</action>
 
 		<action name="editcategoryprocess" method="editcategoryprocess" class="com.mz2b.os.action.CategoryAction">
-			<result>/jsp/manage/category/add.jsp</result>
+			<result type="redirect">/category/searchcategory.action</result>
 		</action>
 		
 		<action name="searchcategory" method="searchcategory" class="com.mz2b.os.action.CategoryAction">
-			<result>/jsp/manage/category/add.jsp</result>
+			<result>/jsp/manage/category/list.jsp</result>
 		</action>	
 			
 		<action name="portalviewcategory" method="portalviewcategory" class="com.mz2b.os.action.CategoryAction">

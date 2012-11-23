@@ -2,7 +2,7 @@ package com.mz2b.base;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -28,8 +28,9 @@ public class BaseDAO {
 		this.sessionFactory = sessionFactory;
 	}
 	
-	public void save(Object o){
+	public void save(BaseBean o){
 		Session session = sessionFactory.getCurrentSession();
+		o.setDate(new Timestamp(System.currentTimeMillis()));
 		session.save(o);
 	}
 	public void delete(Object o){
@@ -81,30 +82,24 @@ public class BaseDAO {
 		return session.get(o.getClass(), o.getId()); 
 	}
 	
-	public void update(BaseBean o) throws SecurityException, NoSuchMethodException, 
+	public int update(BaseBean o) throws SecurityException, NoSuchMethodException, 
 		IllegalArgumentException, IllegalAccessException, InvocationTargetException{
 		Session session = sessionFactory.getCurrentSession();
 		Class c = o.getClass();
 		Field[] f = c.getDeclaredFields();
 		
-		StringBuffer queryStr = new StringBuffer("update " + c.getName() + " c set ");
+		StringBuffer queryStr = new StringBuffer("update " + c.getName() + " set ");
+		String field ,value;
 		for(int i=0;i<f.length;i++){
-			if(f[i].getName().equals("id"))
-				continue;
-			Method m = c.getMethod(getMethod(f[i].getName()), null);
-			if(m.invoke(o, null) != null){
-				queryStr.append("c.");
-				queryStr.append(f[i].getName());
-				queryStr.append("=\'");
-				queryStr.append(m.invoke(o, null));
-				queryStr.append("\' and ");
-			}
-		}			
-		String str = queryStr.toString();
-		str = str.substring(0,str.lastIndexOf('a'));
-		str = str + "where c.id =\'" + o.getId() + "\'"; 
+			field = f[i].getName();
+			
+			value = (String)c.getMethod(getMethod(field), null).invoke(o, null);
+			if(value != null)
+				queryStr.append(field).append("=" + value + " and ");
+		}	
 		
-		session.createQuery(str).executeUpdate();
+		queryStr.append("where id = " + o.id);
+		return session.createQuery(queryStr.toString().replace(" and where", " where")).executeUpdate();
 	}
 	
 	public String getMethod(String field){

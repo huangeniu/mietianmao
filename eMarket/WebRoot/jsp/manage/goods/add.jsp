@@ -32,12 +32,8 @@
 			</div>
 			<div class="table_bg2">
 
-
-
-
-
 				<form name="dataForm" method="post"
-					action="<%=request.getContextPath()%>/bulletin/bulletininfo/addbulletininfoprocess.do"
+					action="<%=request.getContextPath()%>/goods/addgoodsprocess.action"
 					enctype="multipart/form-data">
 
 
@@ -46,104 +42,58 @@
 
 							<tr>
 								<td align="right" width="30%" style="background:#f0f6fe">
-									标题：*
-									<%-- <label class="mandatory">*</label> --%>
+									商品名称：*
 								</td>
 								<td>
-
-
-
-									<input type="text" name="bulletininfo.title" id="title"
+									<input type="text" name="goods.cname" id="cname"
 										class="input_style1" size="100" maxlength="132" />
-
-
 								</td>
 							</tr>
 							<tr>
 								<td align="right" width="30%" style="background:#f0f6fe">
-									概要
-									<label class="mandatory">
-										[
-										<bean:message key="label.input.maxlength" />
-										1000]
-									</label>：&nbsp;
+									图片：
 								</td>
 								<td>
-
-
-
-									<input type="text" name="bulletininfo.summarization" id="summarization"
-										class="input_style1" size="100" maxlength="1000" />
-
-
-								</td>
-							</tr>
-							<tr>
-								<td align="right" width="30%" style="background:#f0f6fe">
-									内容正文
-									<label class="mandatory">[<bean:message key="label.input.maxlength" />65535]</label>
-									：*
-								</td>
-								<td>
-									<textarea name="bulletininfo.contentStr" id="contentStr" cols="100"
-										rows="20" class="ckeditor"></textarea>
-
-
-
-								</td>
-							</tr>
-							<tr>
-								<td align="right" width="30%" style="background:#f0f6fe">
-									附件：&nbsp;
-								</td>
-								<td>
-
-
-
 									<input type="file" name="uploadfile.file" id="uploadfile" class="input_style1"
-										size=28 onchange="checkfile()" />
-
-
+										size=28 onchange="" />
 								</td>
 							</tr>
 							<tr>
 								<td align="right" width="30%" style="background:#f0f6fe">
-									图片：&nbsp;
+									商品说明：
 								</td>
 								<td>
-
-
-
-									<input type="file" name="uploadimage.file" class="input_style1"
-										size=28 id="uploadimage" onchange="checkimage()"/>
-
-
+									<input type="text" name="goods.summary" id="summary"
+										class="input_style1" size="100" maxlength="1000"  />
+								</td>
+							</tr>							
+							<tr>
+								<td align="right" width="30%" style="background:#f0f6fe">
+									出售价：									
+								</td>
+								<td>
+									<input type="text" name="goods.sprice" id="sprice"
+										class="input_style1" size="100" maxlength="1000" />
 								</td>
 							</tr>
 							<tr>
 								<td align="right" width="30%" style="background:#f0f6fe">
-									状态：&nbsp;
+									入货价
 								</td>
 								<td>
-
-
-
-
-									<select name="bulletininfo.btstatusCode" id="btstatusCode">
-										<option value="toPublishe">
-											未发布
-										</option>
-										<option value="published">
-											发布
-										</option>
-									</select>
-
-
+									<textarea name="goods.dprice" id="dprice" cols="100"
+										rows="20" class="ckeditor"></textarea>
 								</td>
 							</tr>
-
-
-							
+							<tr>
+								<td align="right" width="30%" style="background:#f0f6fe">
+									库存
+								</td>
+								<td>
+									<input type="text" name="goods.stock" id="stock"
+										class="input_style1" size="100" maxlength="1000"  />
+								</td>
+							</tr>
 						</table>
 					</div><center><input class="input_btn_style3" type="button" value="保存" onclick="submitData();" /></center>
 				</form>

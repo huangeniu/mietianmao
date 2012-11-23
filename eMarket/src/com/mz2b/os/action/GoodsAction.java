@@ -6,7 +6,7 @@ import com.mz2b.os.vo.GoodsVO;
 
 public class GoodsAction extends BaseAction {
 	private IGoodsService goodsService;
-	private GoodsVO goods;
+	private GoodsVO goods = new GoodsVO();
 	
 	public String addgoods(){
 		return SUCCESS;
