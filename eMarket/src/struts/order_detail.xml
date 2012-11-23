@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+    <package name="tbl_order_dateil" namespace="/orderdetail" extends="struts-default">
+		
+		<action name="addorderdetail" method="addorderdetail" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+
+		<action name="addorderdetailprocess" method="addorderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+
+		<action name="vieworderdetail" method="vieworderdetail" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+
+		<action name="vieworderdetailprocess" method="vieworderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+
+		<action name="editorderdetail" method="editorderdetail" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+
+		<action name="editorderdetailprocess" method="editorderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+		
+		<action name="searchorderdetail" method="searchorderdetail" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>	
+			
+		<action name="portalvieworderdetail" method="portalvieworderdetail" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+		
+		<action name="portalvieworderdetailprocess" method="portalvieworderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+		
+		<action name="portaleditorderdetail" method="portaleditorderdetail" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+		
+		<action name="portaleditorderdetailprocess" method="portaleditorderdetailprocess" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>
+		
+		<action name="deleteorderdetail" method="deleteorderdetail" class="com.mz2b.os.action.OrderDetailAction">
+			<result>/jsp/manage/orderdetail/add.jsp</result>
+		</action>								
+
+    </package>
+
+</struts>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+    <package name="tbl_category" namespace="/category" extends="struts-default">
+		
+		<action name="addcategory" method="addcategory" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+
+		<action name="addcategoryprocess" method="addcategoryprocess" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+
+		<action name="viewcategory" method="viewcategory" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+
+		<action name="editcategory" method="editcategory" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+
+		<action name="editcategoryprocess" method="editcategoryprocess" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+		
+		<action name="searchcategory" method="searchcategory" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>	
+			
+		<action name="portalviewcategory" method="portalviewcategory" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+
+		<action name="portaleditcategory" method="portaleditcategory" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+		
+		<action name="portaleditcategoryprocess" method="portaleditcategoryprocess" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>
+		
+		<action name="deletecategory" method="deletecategory" class="com.mz2b.os.action.CategoryAction">
+			<result>/jsp/manage/category/add.jsp</result>
+		</action>								
+    </package>
+
+</struts>
