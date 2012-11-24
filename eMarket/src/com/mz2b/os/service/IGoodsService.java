@@ -11,6 +11,8 @@ public interface IGoodsService {
 	
 	void deletegoods(GoodsVO goods);
 	
+	int deletegoods(String id);
+	
 	GoodsVO viewgoods(GoodsVO goods);
 	
 	void editgoodsprocess(GoodsVO goods);

@@ -52,5 +52,10 @@ public class UserInfoServiceImpl implements IUserInfoService {
 	public UserInfoVO viewuserinfo(UserInfoVO userInfo) {
 		return (UserInfoVO) userInfoDAO.view(userInfo);
 	}
+
+	@Override
+	public int deleteuserinfo(String id) {
+		return userInfoDAO.delete(UserInfoVO.class, id);
+	}
 	
 }

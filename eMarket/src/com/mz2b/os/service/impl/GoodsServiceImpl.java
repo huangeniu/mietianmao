@@ -53,4 +53,9 @@ public class GoodsServiceImpl implements IGoodsService {
 	public GoodsVO viewgoods(GoodsVO goods) {
 		return (GoodsVO) goodsDAO.view(goods);
 	}
+
+	@Override
+	public int deletegoods(String id) {
+		return goodsDAO.delete(GoodsVO.class, id);
+	}
 }

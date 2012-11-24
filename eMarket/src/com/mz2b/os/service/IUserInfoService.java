@@ -11,6 +11,8 @@ public interface IUserInfoService {
 	
 	void deleteuserinfo(UserInfoVO userInfo);
 	
+	int deleteuserinfo(String id);
+	
 	UserInfoVO viewuserinfo(UserInfoVO userInfo);
 	
 	void edituserinfoprocess(UserInfoVO userInfo);

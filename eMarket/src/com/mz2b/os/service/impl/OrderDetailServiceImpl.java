@@ -53,4 +53,9 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
 		return (OrderDetailVO) orderDetailDAO.view(orderDetail);
 	}
 
+	@Override
+	public int deleteorderdetail(String id) {
+		return orderDetailDAO.delete(OrderDetailVO.class, id);
+	}
+
 }

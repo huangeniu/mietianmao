@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.mz2b.framework.OrderBy;
 import com.mz2b.framework.Pagination;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,6 +19,7 @@ public class BaseAction extends ActionSupport {
 	protected HttpServletRequest request;
 	protected Pagination pagination = new Pagination();
 	protected OrderBy orderBy = new OrderBy();
+	protected String id;
 	
 	public Pagination getPagination() {
 		return pagination;
@@ -53,6 +55,14 @@ public class BaseAction extends ActionSupport {
 
 	public HttpServletRequest getRequest() {
 		return ServletActionContext.getRequest();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

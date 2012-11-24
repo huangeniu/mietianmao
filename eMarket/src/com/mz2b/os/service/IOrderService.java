@@ -11,6 +11,8 @@ public interface IOrderService {
 	
 	void deleteorder(OrderVO order);
 	
+	int deleteorder(String id);
+	
 	OrderVO vieworder(OrderVO order);
 	
 	void editorderprocess(OrderVO order);

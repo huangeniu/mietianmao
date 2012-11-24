@@ -27,6 +27,5 @@ public class UserDAO extends BaseDAO {
 			user = (UserVO) q.list().get(0);
 		return user;
 	}
-	public static void main(String args[]){
-	}
+	
 }

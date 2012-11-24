@@ -36,13 +36,15 @@ public class UploadUtil {
 	}
 	
 	public String upload(){
-		
+		String path = SConfig.getProps("savePath");
+		InputStream in = null; OutputStream os = null;
 		String fileName = (new java.sql.Timestamp(new Date().getTime())).toString();
-		fileName = ServletActionContext.getRequest().getRealPath("\\temp") + "\\" +
+		path = ServletActionContext.getRequest().getRealPath(path) + "\\" +
 			fileName.replaceAll("[^0-9]", "") + ".txt";
+		
 		try {
-			InputStream in = new FileInputStream(file);
-			OutputStream os = new FileOutputStream(new File(fileName));
+			in = new FileInputStream(file);
+			os = new FileOutputStream(new File(path,fileName));
 			byte[] b = new byte[20480];
 			int off = 0 , len = 20480;
 			while(in.read(b, off, len) > 0){
@@ -56,7 +58,12 @@ public class UploadUtil {
 			e.printStackTrace();
 			fileName = "fail";
 		}finally{
+			try{
+				os.close();
+				in.close();
+			}catch(IOException e){}
 			return fileName;
 		}
 	}
+	
 }

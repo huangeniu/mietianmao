@@ -11,6 +11,8 @@ public interface ICategoryService {
 	
 	void deletecategory(CategoryVO category);
 	
+	int deletecategory(String id);
+	
 	CategoryVO viewcategory(CategoryVO category);
 	
 	void editcategoryprocess(CategoryVO category);

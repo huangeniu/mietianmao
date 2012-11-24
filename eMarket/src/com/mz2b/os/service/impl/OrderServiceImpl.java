@@ -52,4 +52,9 @@ public class OrderServiceImpl implements IOrderService{
 	public OrderVO vieworder(OrderVO order) {
 		return (OrderVO) orderDAO.view(order);
 	}
+
+	@Override
+	public int deleteorder(String id) {
+		return orderDAO.delete(OrderVO.class, id);
+	}
 }

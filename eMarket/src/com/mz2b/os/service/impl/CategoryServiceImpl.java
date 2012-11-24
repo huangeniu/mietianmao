@@ -53,4 +53,9 @@ public class CategoryServiceImpl implements ICategoryService {
 	public CategoryVO viewcategory(CategoryVO category) {
 		return (CategoryVO) categoryDAO.view(category);
 	}
+
+	@Override
+	public int deletecategory(String id) {
+		return categoryDAO.delete(CategoryVO.class, id);
+	}
 }

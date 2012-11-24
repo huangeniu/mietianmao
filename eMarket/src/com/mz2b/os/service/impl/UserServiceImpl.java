@@ -6,7 +6,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mz2b.framework.Pagination;
 import com.mz2b.os.dao.UserDAO;
+import com.mz2b.os.dao.UserInfoDAO;
 import com.mz2b.os.service.IUserService;
+import com.mz2b.os.vo.UserInfoVO;
 import com.mz2b.os.vo.UserVO;
 @Transactional
 public class UserServiceImpl implements IUserService{
@@ -64,6 +66,17 @@ public class UserServiceImpl implements IUserService{
 	@Override
 	public UserVO viewuser(UserVO user) {
 		return (UserVO) userDAO.view(user);
+	}
+
+	@Override
+	public void register(UserVO user, UserInfoVO userInfo) {
+		userDAO.save(user);
+		userDAO.save(userInfo);
+	}
+
+	@Override
+	public int deleteuser(String id) {
+		return userDAO.delete(UserVO.class, id);
 	}
 	
 }

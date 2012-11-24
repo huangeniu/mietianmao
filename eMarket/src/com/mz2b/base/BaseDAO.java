@@ -11,6 +11,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.mz2b.framework.OrderBy;
 import com.mz2b.framework.Pagination;
 
 /**
@@ -35,10 +36,27 @@ public class BaseDAO {
 		o.setDate(new Timestamp(System.currentTimeMillis()));
 		session.save(o);
 	}
-	public void delete(BaseBean o){
+	
+	/**
+	 * @deprecated
+	 */
+	public void delete(Object o){
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(o);
 	}
+	
+	public int delete(Class c, String id){
+		Session session = sessionFactory.getCurrentSession();
+		
+		String[] ids = id.split(";");
+		StringBuffer idBuf = new StringBuffer("delete from " + c.getName() + " where id in ('");
+		for(int i=0;i<ids.length;i++)
+			idBuf.append(ids[i]).append("',");
+		idBuf.append(")");
+		
+		return session.createQuery(idBuf.toString().replace(",)", ")")).executeUpdate();
+	}
+	
 	public Object view(BaseBean o){
 		Session session = sessionFactory.getCurrentSession();
 		return session.get(o.getClass(),o.getId());
@@ -49,7 +67,7 @@ public class BaseDAO {
 	}
 	public List queryForList(BaseBean o ,Pagination p){
 		Session session = sessionFactory.getCurrentSession();
-		Query q = session.createQuery("from " + o.getClass().getName());
+		Query q = session.createQuery("from " + o.getClass().getName() + "order by date desc");
 		if(p != null){
 			p.setCount(q.list().size());
 			q.setFirstResult(p.getCurCount());
@@ -60,8 +78,7 @@ public class BaseDAO {
 	}
 	public List portalQuery4List(BaseBean o ,Pagination p){
 		Session session = sessionFactory.getCurrentSession();
-		Query q = null;
-			q = session.createQuery("from " + o.getClass().getName());
+		Query q = session.createQuery("from " + o.getClass().getName() + "order by date desc");
 		if(p != null){
 			p.setCount(q.list().size());
 			q.setFirstResult(p.getCurCount());
@@ -147,7 +164,7 @@ public class BaseDAO {
 	}
 	
 	public String getMethod(String field){
-		field = "get" + (char)(field.charAt(0) - 32) + field.substring(1);
+		field = "get" + field.substring(0,1).toUpperCase() + field.substring(1);
 		return field;
 	}
 }

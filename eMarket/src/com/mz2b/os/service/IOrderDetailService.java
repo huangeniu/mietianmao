@@ -11,6 +11,8 @@ public interface IOrderDetailService {
 	
 	void deleteorderdetail(OrderDetailVO orderDetail);
 	
+	int deleteorderdetail(String id);
+	
 	OrderDetailVO vieworderdetail(OrderDetailVO orderDetail);
 	
 	void editorderdetailprocess(OrderDetailVO orderDetail);
