@@ -17,6 +17,7 @@ public class BaseAction extends ActionSupport {
 	protected String url;
 	protected HttpServletRequest request;
 	protected Pagination pagination = new Pagination();
+	protected OrderBy orderBy = new OrderBy();
 	
 	public Pagination getPagination() {
 		return pagination;

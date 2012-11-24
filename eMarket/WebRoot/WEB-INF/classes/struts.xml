@@ -26,7 +26,8 @@
     <include file="struts/order_order.xml"/>
     <include file="struts/order_detail.xml"/>
     <include file="struts/category_category.xml"/>
-
+    <include file="struts/demo_demo.xml"/>
+	
     <!-- Add packages here -->
 
 </struts>

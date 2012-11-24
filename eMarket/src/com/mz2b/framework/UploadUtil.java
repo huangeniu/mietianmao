@@ -11,41 +11,37 @@ import java.util.Date;
 
 import org.apache.struts2.ServletActionContext;
 
-public class Upload {
-	private File upload;
-	private String uploadFileName;
-	private String uploadContentType;
-	private String fileType;
+public class UploadUtil {
+	private File file;
+	private String fileContentType;
+	private String fileFileName;
 	
-	public String getFileType() {
-		return uploadFileName.substring(uploadFileName.lastIndexOf('.'));
+	public String getFileContentType() {
+		return fileContentType;
 	}
-	public File getUpload() {
-		return upload;
+	public void setFileContentType(String fileContentType) {
+		this.fileContentType = fileContentType;
 	}
-	public void setUpload(File upload) {
-		this.upload = upload;
+	public String getFileFileName() {
+		return fileFileName;
 	}
-	public String getUploadFileName() {
-		return uploadFileName;
+	public void setFileFileName(String fileFileName) {
+		this.fileFileName = fileFileName;
 	}
-	public void setUploadFileName(String uploadFileName) {
-		this.uploadFileName = uploadFileName;
+	public File getFile() {
+		return file;
 	}
-	public String getUploadContentType() {
-		return uploadContentType;
-	}
-	public void setUploadContentType(String uploadContentType) {
-		this.uploadContentType = uploadContentType;
+	public void setFile(File file) {
+		this.file = file;
 	}
 	
 	public String upload(){
 		
 		String fileName = (new java.sql.Timestamp(new Date().getTime())).toString();
 		fileName = ServletActionContext.getRequest().getRealPath("\\temp") + "\\" +
-			fileName.replaceAll("[^0-9]", "") + this.getFileType();
+			fileName.replaceAll("[^0-9]", "") + ".txt";
 		try {
-			InputStream in = new FileInputStream(upload);
+			InputStream in = new FileInputStream(file);
 			OutputStream os = new FileOutputStream(new File(fileName));
 			byte[] b = new byte[20480];
 			int off = 0 , len = 20480;

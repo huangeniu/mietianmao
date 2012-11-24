@@ -32,6 +32,9 @@
 	    
 	    <mapping class="com.mz2b.os.vo.UserVO"/>
 	    <mapping class="com.mz2b.os.vo.UserInfoVO"/>
+	    <mapping class="com.mz2b.os.vo.GoodsVO"/>
+	    <mapping class="com.mz2b.os.vo.CategoryVO"/>
+	    
 	</session-factory>
 	  
 </hibernate-configuration>

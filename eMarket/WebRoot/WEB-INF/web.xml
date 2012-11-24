@@ -28,7 +28,7 @@
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
-
+<!-- 
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -46,5 +46,5 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
+ -->
 </web-app>

@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<form name="adf" action="<%=basePath%>demo/upload.action" method="POST" 
 		enctype="multipart/form-data" >
-		<input type="file" name="upload.upload" />
+		<input type="file" name="upload.file" />
 		<input type="submit" value="submit" />
 	</form>
 	

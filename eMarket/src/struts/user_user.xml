@@ -53,6 +53,12 @@
 		
 		<action name="deleteuser" method="deleteuser" class="com.mz2b.os.action.UserAction">
 			<result>/jsp/manage/user/add.jsp</result>
+		</action>
+		
+		<action name="userLogin" method="userLogin" class="com.mz2b.os.action.UserAction">
+		</action>
+		<action name="userLoginOut" method="userLoginOut" class="com.mz2b.os.action.UserAction">
+			<result>/jsp/index/index.jsp</result>
 		</action>								
     </package>
 

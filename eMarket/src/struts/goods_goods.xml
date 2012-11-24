@@ -24,7 +24,7 @@
 		</action>
 
 		<action name="editgoodsprocess" method="editgoodsprocess" class="com.mz2b.os.action.GoodsAction">
-			<result type="redirect">/goods/searchgoods.action</result>
+			<result  type="redirect">/goods/searchgoods.action</result>
 		</action>
 		
 		<action name="searchgoods" method="searchgoods" class="com.mz2b.os.action.GoodsAction">
@@ -44,7 +44,7 @@
 		</action>
 		
 		<action name="deletegoods" method="deletegoods" class="com.mz2b.os.action.GoodsAction">
-			<result>/jsp/manage/goods/add.jsp</result>
+			<result  type="redirect">/goods/searchgoods.action</result>
 		</action>								
     </package>
 
