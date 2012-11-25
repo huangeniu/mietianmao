@@ -1,6 +1,7 @@
 package com.mz2b.os.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mz2b.framework.Pagination;
 import com.mz2b.os.dao.UserInfoDAO;
@@ -56,6 +57,11 @@ public class UserInfoServiceImpl implements IUserInfoService {
 	@Override
 	public int deleteuserinfo(String id) {
 		return userInfoDAO.delete(UserInfoVO.class, id);
+	}
+
+	@Override
+	public int edituserinfoprocess(Map<String, Object> map) {
+		return userInfoDAO.update(UserInfoVO.class, map);
 	}
 	
 }

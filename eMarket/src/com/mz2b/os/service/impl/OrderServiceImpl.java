@@ -1,6 +1,7 @@
 package com.mz2b.os.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mz2b.framework.Pagination;
 import com.mz2b.os.dao.OrderDAO;
@@ -56,5 +57,10 @@ public class OrderServiceImpl implements IOrderService{
 	@Override
 	public int deleteorder(String id) {
 		return orderDAO.delete(OrderVO.class, id);
+	}
+
+	@Override
+	public int editorderprocess(Map<String, Object> map) {
+		return orderDAO.update(OrderVO.class, map);
 	}
 }

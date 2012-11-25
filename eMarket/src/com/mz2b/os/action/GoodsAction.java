@@ -30,7 +30,7 @@ public class GoodsAction extends BaseAction {
 	}
 	
 	public String deletegoods(){
-		goodsService.deletegoods(goods);
+		goodsService.deletegoods(goods,this.getId());
 		return SUCCESS;
 	}
 	
@@ -59,6 +59,9 @@ public class GoodsAction extends BaseAction {
 	}
 	
 	public String searchgoods(){
+		if(goods.getGname()!=null && goods.getGname().equals("") ){
+			goods.setGname(null);
+		}
 		resultList = goodsService.searchgoods(goods, pagination);
 		return SUCCESS;
 	}

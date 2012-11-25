@@ -1,6 +1,7 @@
 package com.mz2b.os.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mz2b.framework.Pagination;
 import com.mz2b.os.dao.GoodsDAO;
@@ -25,8 +26,8 @@ public class GoodsServiceImpl implements IGoodsService {
 	}
 
 	@Override
-	public void deletegoods(GoodsVO goods) {
-		goodsDAO.delete(goods);
+	public void deletegoods(GoodsVO goods,String ids) {
+		goodsDAO.delete(goods.getClass(),ids);
 	}
 
 	@Override
@@ -57,5 +58,10 @@ public class GoodsServiceImpl implements IGoodsService {
 	@Override
 	public int deletegoods(String id) {
 		return goodsDAO.delete(GoodsVO.class, id);
+	}
+
+	@Override
+	public int editgoodsprocess(Map<String, Object> map) {
+		return goodsDAO.update(GoodsVO.class, map);
 	}
 }

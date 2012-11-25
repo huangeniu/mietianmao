@@ -24,7 +24,6 @@
 	    <property name="packagesToScan">
 	      <list>
 	        <value>com.mz2b.os.vo</value>
-	        <value></value>
 	      </list>
 	    </property>
 	    <property name="hibernateProperties">
@@ -49,8 +48,9 @@
 	
 	  <tx:advice id="txAdvice" transaction-manager="txManager">
 	    <tx:attributes>
-	      <tx:method name="add*" propagation="REQUIRED"/>
-	      <tx:method name="*" propagation="REQUIRED" read-only="true"/>
+	      <tx:method name="view*" propagation="REQUIRED" read-only="true"/>
+	      <tx:method name="portalview*" propagation="REQUIRED" read-only="true"/>
+	      <tx:method name="*" propagation="REQUIRED"/>
 	    </tx:attributes>
 	  </tx:advice>
 

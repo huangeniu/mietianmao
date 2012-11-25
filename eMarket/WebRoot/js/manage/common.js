@@ -1,5 +1,5 @@
 /**
- *jsµ¥Ñ¡°´Å¥È«Ñ¡& É¾³ı ²Ù×÷
+ *jså•é€‰æŒ‰é’®å…¨é€‰& åˆ é™¤ æ“ä½œ
  *By haungjinkun
  *2012-11-24
  */
@@ -36,12 +36,12 @@ function checkSelectIS(checkBoxName) {
 
 function deletetemplate(checkBoxName,action) {
 	if (checkSelectIS(checkBoxName)) {
-		if (window.confirm("È·¶¨ÒªÉ¾³ı¸ÃÊı¾İÂğ£¿")) {
+		if (window.confirm("ç¡®å®šè¦åˆ é™¤è¯¥æ•°æ®å—ï¼Ÿ")) {
 			document.callForm.action = action;
 			document.callForm.submit();
 		}
 	} else {
-		alert("ÇëÖÁÉÙÑ¡ÔñÒ»ÏîÉ¾³ı£¡");
+		alert("è¯·è‡³å°‘é€‰æ‹©ä¸€é¡¹åˆ é™¤ï¼");
 		return;
 	}
 }

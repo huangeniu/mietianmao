@@ -47,14 +47,12 @@ public class BaseDAO {
 	
 	public int delete(Class c, String id){
 		Session session = sessionFactory.getCurrentSession();
-		
-		String[] ids = id.split(";");
+		String[] ids = id.split(",");
 		StringBuffer idBuf = new StringBuffer("delete from " + c.getName() + " where id in ('");
 		for(int i=0;i<ids.length;i++)
-			idBuf.append(ids[i]).append("',");
+			idBuf.append(ids[i]).append("','");
 		idBuf.append(")");
-		
-		return session.createQuery(idBuf.toString().replace(",)", ")")).executeUpdate();
+		return session.createQuery(idBuf.toString().replace(",')", ")")).executeUpdate();
 	}
 	
 	public Object view(BaseBean o){
@@ -66,19 +64,19 @@ public class BaseDAO {
 		session.update(o);
 	}
 	public List queryForList(BaseBean o ,Pagination p){
-		Session session = sessionFactory.getCurrentSession();
-		Query q = session.createQuery("from " + o.getClass().getName() + "order by date desc");
-		if(p != null){
-			p.setCount(q.list().size());
-			q.setFirstResult(p.getCurCount());
-			q.setMaxResults(p.getCurPagin());
-		}
-		
-		return q.list();
+//		Session session = sessionFactory.getCurrentSession();
+//		Query q = session.createQuery("from " + o.getClass().getName() + " order by date desc");
+//		if(p != null){
+//			p.setCount(q.list().size());
+//			q.setFirstResult(p.getCurCount());
+//			q.setMaxResults(p.getCurPagin());
+//		}
+//		
+		return enQuery(o,p,new OrderBy());
 	}
 	public List portalQuery4List(BaseBean o ,Pagination p){
 		Session session = sessionFactory.getCurrentSession();
-		Query q = session.createQuery("from " + o.getClass().getName() + "order by date desc");
+		Query q = session.createQuery("from " + o.getClass().getName() + " order by date desc");
 		if(p != null){
 			p.setCount(q.list().size());
 			q.setFirstResult(p.getCurCount());
@@ -96,26 +94,9 @@ public class BaseDAO {
 	/**
 	 * @deprecated 
 	 */
-	public int update(BaseBean o) {
+	public void update(BaseBean o) {
 		Session session = sessionFactory.getCurrentSession();
-		Class c = o.getClass();
-		Field[] f = c.getDeclaredFields();
-		
-		StringBuffer queryStr = new StringBuffer("update " + c.getName() + " set ");
-		String field ,value;
-		for(int i=0;i<f.length;i++){
-			field = f[i].getName();
-			try{
-				value = (String)c.getMethod(getMethod(field), null).invoke(o, null);
-				if(value != null)
-					queryStr.append(field).append("=\'" + value + "\' and ");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}	
-		
-		queryStr.append("where id = " + o.id);
-		return session.createQuery(queryStr.toString().replace(" and where", " where")).executeUpdate();
+		session.update(o);
 	}
 	
 	public int update(Class c, Map<String,Object> map) {
@@ -146,7 +127,7 @@ public class BaseDAO {
 				
 				try {
 					value = c.getMethod(getMethod(field), null).invoke(o, null);
-					if(value != null && value.equals("0.0") && value.equals("0"))
+					if(value != null && !value.equals(0.0f) && !value.equals(0))
 						queryStr.append(field).append("=\'").append(value).append("\' and ");
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -159,7 +140,7 @@ public class BaseDAO {
 			p.setCount(q.list().size());
 			q.setFirstResult(p.getCurCount());
 			q.setMaxResults(p.getCurPagin());			
-		}
+		}System.out.println(q.getQueryString());
 		return q.list();
 	}
 	

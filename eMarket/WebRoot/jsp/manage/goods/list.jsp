@@ -35,7 +35,6 @@
 						<input type="text" id="gname" name="goods.gname" size="20"
 							maxlength="50" class="form_field"
 							value="${goods.gname}" />&nbsp;&nbsp;
-
 						商品价格：
 
 						<input type="text" id="dprice"
@@ -59,7 +58,7 @@
 			<input class="input_btn_style2" type="button" name="createData"
 				value="&nbsp;新增&nbsp;" onclick="window.location.href='<%=basePath%>jsp/manage/goods/add.jsp'" />
 			<input class="input_btn_style1" type="button" name="deleteData"
-				value="&nbsp;删除&nbsp;" onclick="deletetemplate('goods.id','/goods/deletegoods.action')" />
+				value="&nbsp;删除&nbsp;" onclick="deletetemplate('id','/goods/deletegoods.action')" />
 			</span></div>
 			<div class="table_bg">
 			<table width="98%" id="main_table" align="center">
@@ -67,7 +66,7 @@
 					<th align="center">
 						全选
 						<input type="checkbox" name="check_box1"
-							onclick="checkSelect('goods.id')" />
+							onclick="checkSelect('id')" />
 					</th>
 					<th align="center">
 						商品图片
@@ -94,7 +93,7 @@
 			<s:iterator value="#attr.resultList" var="to" >
 				<tr>
 					<td align="center">
-						<input type="checkbox" name="goods.id" id="goods.id"
+						<input type="checkbox" name="id" id="goods.id"
 							value="${to.id }" />
 					</td>
 					<td align="center">

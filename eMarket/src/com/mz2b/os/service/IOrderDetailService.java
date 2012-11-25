@@ -1,6 +1,7 @@
 package com.mz2b.os.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mz2b.framework.Pagination;
 import com.mz2b.os.vo.OrderDetailVO;
@@ -16,6 +17,8 @@ public interface IOrderDetailService {
 	OrderDetailVO vieworderdetail(OrderDetailVO orderDetail);
 	
 	void editorderdetailprocess(OrderDetailVO orderDetail);
+	
+	int editorderdetailprocess(Map<String,Object> map);
 	
 	List searchorderdetail(OrderDetailVO orderDetail , Pagination p);
 	

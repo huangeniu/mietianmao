@@ -1,6 +1,7 @@
 package com.mz2b.os.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mz2b.framework.Pagination;
 import com.mz2b.os.dao.OrderDetailDAO;
@@ -56,6 +57,11 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
 	@Override
 	public int deleteorderdetail(String id) {
 		return orderDetailDAO.delete(OrderDetailVO.class, id);
+	}
+
+	@Override
+	public int editorderdetailprocess(Map<String, Object> map) {
+		return orderDetailDAO.update(OrderDetailVO.class, map);
 	}
 
 }

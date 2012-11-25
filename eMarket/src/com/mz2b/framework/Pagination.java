@@ -26,4 +26,16 @@ public class Pagination {
 	public int getCurCount() {
 		return curPagin * (curPage - 1);
 	}
+	public boolean firstEnable() {
+		return previoEnable();
+	}
+	public boolean previoEnable() {
+	    return curPage > 1;
+	}
+	public boolean nextEnable() {
+	    return curPage * curPagin < count;
+	}
+	public boolean lastEnable() {
+		return nextEnable();
+	}
 }

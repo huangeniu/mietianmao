@@ -1,6 +1,7 @@
 package com.mz2b.os.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mz2b.framework.Pagination;
 import com.mz2b.os.dao.CategoryDAO;
@@ -57,5 +58,10 @@ public class CategoryServiceImpl implements ICategoryService {
 	@Override
 	public int deletecategory(String id) {
 		return categoryDAO.delete(CategoryVO.class, id);
+	}
+
+	@Override
+	public int editcategoryprocess(Map<String, Object> map) {
+		return categoryDAO.update(CategoryVO.class, map);
 	}
 }

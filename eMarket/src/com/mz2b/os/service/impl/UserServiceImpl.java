@@ -1,6 +1,7 @@
 package com.mz2b.os.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -77,6 +78,11 @@ public class UserServiceImpl implements IUserService{
 	@Override
 	public int deleteuser(String id) {
 		return userDAO.delete(UserVO.class, id);
+	}
+
+	@Override
+	public int edituserprocess(Map<String, Object> map) {
+		return userDAO.update(UserVO.class, map);
 	}
 	
 }
